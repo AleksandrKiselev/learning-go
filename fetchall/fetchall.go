@@ -44,5 +44,5 @@ func fetch(url string, ch chan<- string) {
 	}
 
 	secs := time.Since(start).Seconds()
-	ch <- fmt.Sprintf("%.2fs %7d %s", secs, nbites, url)
+	ch <- fmt.Sprintf("%10s, %.2fs, %7db, %s", resp.Status, secs, nbites, url)
 }
